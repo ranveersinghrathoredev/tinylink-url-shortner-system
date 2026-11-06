@@ -30,8 +30,6 @@ public class RateLimitService {
 
     public boolean isAllowed(String clientIp) {
         String redisKey = REDIS_KEY_PREFIX + clientIp;
-        // let say client ip is 192.168.1.10
-        // then our redisKey will be :  ratelimit: 192.168.1.10
 
 
         LocalDateTime now = LocalDateTime.now();
