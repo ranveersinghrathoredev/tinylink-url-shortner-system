@@ -1,6 +1,4 @@
 
-console.log("TinyLink JavaScript connected!");
-
 const shortenForm = document.getElementById("shortenForm");
 const statsForm = document.getElementById("statsForm");
 
@@ -10,8 +8,6 @@ shortenForm.addEventListener("submit", function (event) {
     document.getElementById("shortenError").textContent = "";
     document.getElementById("rateLimitError").textContent = "";
     document.getElementById("shortenResult").replaceChildren();
-
-    console.log("Shorten form submitted!");
 
     const originalUrl = document.getElementById("originalUrl").value;
     const customAlias = document.getElementById("customAlias").value;
@@ -41,9 +37,6 @@ shortenForm.addEventListener("submit", function (event) {
         return;
     }
 
-    console.log("Original URL:", originalUrl);
-    console.log("Custom Alias:", customAlias);
-    console.log("Expires At:", expiresAt);
 
     const requestData = {
         originalUrl: originalUrl,
@@ -52,8 +45,6 @@ shortenForm.addEventListener("submit", function (event) {
     };
 
     const jsonData = JSON.stringify(requestData);
-
-    console.log("JSON data:", jsonData);
 
     fetch("http://localhost:8080/api/shorten", {
         method: "POST",
@@ -65,12 +56,8 @@ shortenForm.addEventListener("submit", function (event) {
         return response.json().catch(function () {
             return {};
         }).then(function (data) {
-            console.log("Status:", response.status);
-            console.log("Error:", data.error);
 
             if (response.status === 400) {
-                console.log("400 ERROR DETECTED");
-                console.log("Error message:", data.error);
 
                 if (typeof data.error === "string" && data.error.includes("Custom alias already exists")) {
                     document.getElementById("shortenError").textContent =
@@ -93,7 +80,6 @@ shortenForm.addEventListener("submit", function (event) {
                 return;
             }
 
-            console.log("Backend response:", data);
 
             const result = document.getElementById("shortenResult");
             result.replaceChildren();
@@ -121,7 +107,7 @@ shortenForm.addEventListener("submit", function (event) {
             document.getElementById("shortCode").value = data.shortCode ?? "";
         });
     }).catch(function (error) {
-        console.error("Shorten error:", error);
+        
         document.getElementById("shortenError").textContent =
             "Unable to shorten URL. Please try again.";
     });
@@ -139,8 +125,6 @@ statsForm.addEventListener("submit", function (event) {
             return;
         }
 
-    console.log("Stats form submitted!");
-    console.log("Short Code:", shortCode);
 
     fetch(`http://localhost:8080/api/stats/${encodeURIComponent(shortCode)}`)
         .then(function (response) {
@@ -151,7 +135,7 @@ statsForm.addEventListener("submit", function (event) {
             return response.json();
         })
         .then(function (data) {
-            console.log("Stats response:", data);
+
 
             const result = document.getElementById("statsResult");
             result.replaceChildren();
