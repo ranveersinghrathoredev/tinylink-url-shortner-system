@@ -4,48 +4,7 @@
 
 > Project Structure:
 
- tinylink/
- frontend
-     index.html
-     css/style.css
-     js/script.js
-
-    
-  tinylink/
-  backend/
-     src/
-         main/
-             java/
-                com/
-                github/
-                ranveer/
-                tinylink/
-                    config/
-                      CleanupScheduler
-                      RedisConfig
-                      WebConfig
-                    controllers/
-                      UrlShortnerController
-                    dto/
-                      ShortenUrlRequest
-                      ShortenUrlResponse
-                      UrlAnalyticsResponse
-                      UrlStatsResponse
-                    models/
-                      ClickEvent
-                      RateLimitData
-                      UrlData
-                    services/
-                      RateLimitService
-                      UrlShortnerService
-                    validator/
-                      UrlValidator
-                      ValidUrl
-                    TinyLinkApplication
-                    resources/
-                      application.yaml
-
-
+ [View Architecture Diagram 2](https://github.com/ranveersinghrathoredev/tinylink-url-shortner-system/blob/master/Backend/src/main/java/com/github/ranveer/tinylink/image/img_1.png)
 
 
 > Project Architecture and Data Flow:
