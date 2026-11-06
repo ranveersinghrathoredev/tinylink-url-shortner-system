@@ -5,43 +5,45 @@
 > Project Structure:
 
  tinylink/
-└── frontend/
-    ├── index.html
-    ├── css/style.css
-    └── js/script.js
+ frontend
+     index.html
+     css/style.css
+     js/script.js
 
     
   tinylink/
-└── backend/
-    └── src/
-        └── main/
-            ├── java/
-            │   └── com/github/ranveer/tinylink/
-            │       ├── config/
-            │       │   ├── CleanupScheduler
-            │       │   ├── RedisConfig
-            │       │   └── WebConfig
-            │       ├── controllers/
-            │       │   └── UrlShortnerController
-            │       ├── dto/
-            │       │   ├── ShortenUrlRequest
-            │       │   ├── ShortenUrlResponse
-            │       │   ├── UrlAnalyticsResponse
-            │       │   └── UrlStatsResponse
-            │       ├── models/
-            │       │   ├── ClickEvent
-            │       │   ├── RateLimitData
-            │       │   └── UrlData
-            │       ├── services/
-            │       │   ├── RateLimitService
-            │       │   └── UrlShortnerService
-            │       ├── validator/
-            │       │   ├── UrlValidator
-            │       │   └── ValidUrl
-            │       └── TinyLinkApplication
-            │
-            └── resources/
-                └── application.yaml
+  backend/
+     src/
+         main/
+             java/
+                com/
+                github/
+                ranveer/
+                tinylink/
+                    config/
+                      CleanupScheduler
+                      RedisConfig
+                      WebConfig
+                    controllers/
+                      UrlShortnerController
+                    dto/
+                      ShortenUrlRequest
+                      ShortenUrlResponse
+                      UrlAnalyticsResponse
+                      UrlStatsResponse
+                    models/
+                      ClickEvent
+                      RateLimitData
+                      UrlData
+                    services/
+                      RateLimitService
+                      UrlShortnerService
+                    validator/
+                      UrlValidator
+                      ValidUrl
+                    TinyLinkApplication
+                    resources/
+                      application.yaml
 
 
 
