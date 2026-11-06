@@ -51,6 +51,9 @@
 [View Architecture and Data Flow](https://github.com/ranveersinghrathoredev/tinylink-url-shortner-system/blob/master/Backend/src/main/java/com/github/ranveer/tinylink/image/img.png)
 
 
+> Real World Examples: Bitly and Twitter
+
+
 
 
 
